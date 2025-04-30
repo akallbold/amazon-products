@@ -3,7 +3,7 @@ import { Handler } from '@netlify/functions'
 import OpenAI from 'openai'
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,    // set via Netlify UI or local .env
+  apiKey: process.env.VITE_OPENAI_API_KEY,    // set via Netlify UI or local .env
 })
 
 export const handler: Handler = async (event) => {

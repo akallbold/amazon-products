@@ -7,15 +7,18 @@ export const openai = new OpenAI({
   dangerouslyAllowBrowser: true 
 });
 
-export async function checkGuess(prompt: string): Promise<{ result: string; error: string; correct: boolean }> {
+export async function checkGuess(prompt: string) {
   const res = await fetch('/.netlify/functions/check-guess', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ prompt }),
-  })
-  const data = await res.json()
-  if (!res.ok) throw new Error(data.error || 'Function error')
-  return { result: data.result, error: data.error, correct: data.correct }
-}
+  });
 
-    
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(err || 'Function error');
+  }
+
+  const data = await res.json();
+  return { result: data.result, error: data.error, correct: data.correct };
+}
