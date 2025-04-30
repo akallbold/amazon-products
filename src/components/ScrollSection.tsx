@@ -3,9 +3,6 @@ import React from 'react';
 interface ScrollSectionProps {
   title: string;
   className?: string;
-  imageSrc?: string;
-  onGuess?: (guess: string) => void;
-  feedback?: string;
   isCorrect?: boolean;
   children?: React.ReactNode;
 }
@@ -13,10 +10,6 @@ interface ScrollSectionProps {
 const ScrollSection: React.FC<ScrollSectionProps> = ({
   title,
   className,
-  imageSrc,
-  onGuess,
-  feedback,
-  isCorrect,
   children,
 }) => {
   return (

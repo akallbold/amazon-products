@@ -5,7 +5,7 @@ import Gallery from './components/Gallery';
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0);
-
+  console.log(currentSection);
   const sections = [
     { title: "Amazon keeps trying to sell things to me on Instagram" },
     { title: "and I don't know what anything is!" },
