@@ -21,15 +21,7 @@ Currently, two official plugins are available:
    echo "VITE_OPENAI_API_KEY=<your key>" > .env
    ```
 
-3. Start the frontend
-
-   ```bash
-   npm run dev
-   ```
-
-   This runs Vite at [http://localhost:5173](http://localhost:5173).
-
-4. In another terminal start the backend functions (requires the Netlify CLI)
+3. Run the following in your terminal (requires the Netlify CLI). This will start the frontend and the backend.
 
    ```bash
    netlify dev

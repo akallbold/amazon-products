@@ -1,10 +1,11 @@
 :root {
   --background-color: #f5f5f5;
   --text-color: #333;
-  --primary-color: #2563eb;
+  --primary-color: var(--amazon-yellow);
   --secondary-color: #475569;
+  --amazon-yellow: #ffb347;
+  --amazon-border: #FF9900;
   --transition: all 0.3s ease;
-
 }
 
 * {
@@ -21,6 +22,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-anchor: none;
+}
+
 .app-container {
   /* Fill full viewport width and reset padding */
   width: 100vw;
@@ -30,13 +35,44 @@ body {
 }
 
 .scroll-section {
+  position: relative;
   height: 150vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8rem 2rem;
   transition: var(--transition);
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  background-color: var(--background-color);
+}
+
+.first-section {
+  align-items: flex-start;
+  /* padding-top: 10vh; */
+}
+.scroll-arrow {
+  position: fixed;
+  bottom: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #1a1a1a;
+  animation: bounce 1.5s infinite;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.scroll-arrow.hidden {
+  opacity: 0;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 /* Gallery styles */
@@ -138,6 +174,11 @@ body {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.guess-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
 .guess-button {
   padding: 0.6rem 1rem;
   background-color: var(--primary-color);
@@ -151,6 +192,11 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.guess-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
   .scroll-section {
@@ -161,11 +207,6 @@ body {
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-  }
-  
-  .guess-container {
-    gap: 1rem;
-    margin-top: 2rem;
   }
   
   .guess-input {
@@ -220,50 +261,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.guess-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 3rem;
-  max-width: 600px;
-  width: 100%;
-}
-
-.guess-input {
-  width: 100%;
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: var(--transition);
-  background: #f9fafb;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.guess-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
-}
-
-.guess-button {
-  padding: 0.6rem 1rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.guess-button:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-1px);
-}
-
 .feedback {
   margin-top: 1.5rem;
   padding: 1.25rem;
@@ -285,12 +282,7 @@ body {
   color: #ef4444;
 }
 
-/* Scroll-based animations */
-.scroll-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: var(--transition);
-}
+
 
 .scroll-section.active {
   opacity: 1;
@@ -324,13 +316,32 @@ body {
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+.image-card .guess-button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 .image-card .guess-input {
   flex: 1 1 auto;
   min-width: 0;
 }
 
 .image-card .guess-button {
-  flex: 0 0 auto;
+  flex: 1 1 100%;
+  width: 100%;
+  background-color: var(--amazon-yellow);
+  color: #333;
+  font-weight: 600;
+  border: 1px solid var(--amazon-border);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.image-card .guess-button:hover {
+  background-color: #fde047; /* slightly deeper on hover */
+  transform: translateY(-1px);
 }
 
 .image-card .progress-bar {
@@ -345,7 +356,7 @@ body {
 
 .image-card .progress {
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--amazon-yellow);
   width: 0%; /* placeholder, will be dynamic */
   transition: width 0.3s ease;
 }
