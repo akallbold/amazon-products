@@ -19,8 +19,8 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({
       <div className="section-content">
         <h2 className="section-title">{title}</h2>
         {children}
-      </div>
       {showArrow && <div className="scroll-arrow">&#x2193;</div>}
+      </div>
     </div>
   );
 };
