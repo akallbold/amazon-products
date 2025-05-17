@@ -16,10 +16,9 @@ export const handler: Handler = async (event) => {
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: prompt }],
     })
-    let result: string
     let error = false
     let correct = false
-    result = resp.choices[0]?.message?.content || "I couldn't evaluate the guess.";
+    const result = resp.choices[0]?.message?.content || "I couldn't evaluate the guess.";
     if (result === "I couldn't evaluate the guess.") {
       correct = false
       error = true
