@@ -7,13 +7,11 @@ function App() {
   const [currentSection, setCurrentSection] = useState(0);
   console.log(currentSection);
   const sections = [
-    { title: "Amazon keeps trying to sell things to me on Instagram" },
-    { title: "and I don't know what anything is!" },
-    { title: "I realized they weren't selling me things they thought I'd buy" },
-    { title: "but instead they'd advertise things I'd want to know what they were" }, 
-    { title: "and so I clicked and I clicked" }, 
-    { title: "so your algorithm doesn't have to be as wild as mine" }, 
-    { title: "Can you guess what each of these things is?" },
+    { title: "Amazon ads kept popping up on my Instagram." },
+    { title: "I didn’t recognize anything they were showing me." },
+    { title: "So I kept clicking—just to find out what the heck everything was." },
+    { title: "Here is a small sampling of what I saw." }, 
+    { title: "Can you guess what each thing is?" }, 
   ];
 
   console.log(sections);
