@@ -30,13 +30,35 @@ body {
 }
 
 .scroll-section {
+  position: relative;
+  position: relative;
   height: 150vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8rem 2rem;
   transition: var(--transition);
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+  background-color: var(--background-color);
+}
+
+.scroll-arrow {
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #1a1a1a;
+  animation: bounce 1.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 /* Gallery styles */
@@ -189,7 +211,6 @@ body {
   opacity: 1;
   transform: translateY(0);
   transition: var(--transition);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-section.active .section-title {
