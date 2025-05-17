@@ -33,9 +33,10 @@ const Gallery: React.FC = () => {
       return;
     }
   
-    setProducts(prev => prev.map((p, i) =>
-      i === index ? { ...p, warmth: Number(result) || p.warmth, answered: correct } : p
-    ));
+    const warmth = Math.max(0, Math.min(100, Math.round(Number(result) * 10)));
+    setProducts(prev =>
+      prev.map((p, i) => (i === index ? { ...p, warmth, answered: correct } : p))
+    );
   };
 
   return (
