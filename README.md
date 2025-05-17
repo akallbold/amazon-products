@@ -32,7 +32,7 @@ Currently, two official plugins are available:
 4. In another terminal start the backend functions (requires the Netlify CLI)
 
    ```bash
-   npx netlify dev
+   netlify dev
    ```
 
 ## Expanding the ESLint configuration
