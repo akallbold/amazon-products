@@ -14,7 +14,7 @@ function App() {
     { title: "Here is a small collection of what I saw" }, 
     { title: "Can you guess what each thing is?" }, 
   ];
-
+  console.log(currentSection);
   useEffect(() => {
     let hasUserScrolled = false;
   
