@@ -6,7 +6,6 @@ interface ScrollSectionProps {
   isCorrect?: boolean;
   showArrow?: boolean;
   children?: React.ReactNode;
-  showArrow?: boolean;
 }
 
 const ScrollSection: React.FC<ScrollSectionProps> = ({
@@ -23,7 +22,6 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({
       {showArrow && <div className="scroll-arrow">&#x2193;</div>}
       </div>
     </div>
-  </div>
   );
 };
 
