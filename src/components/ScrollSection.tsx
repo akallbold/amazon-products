@@ -4,8 +4,8 @@ interface ScrollSectionProps {
   title: string;
   className?: string;
   isCorrect?: boolean;
-  children?: React.ReactNode;
   showArrow?: boolean;
+  children?: React.ReactNode;
 }
 
 const ScrollSection: React.FC<ScrollSectionProps> = ({
