@@ -37,6 +37,8 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Trigger once so the first section is visible on load
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -46,6 +48,7 @@ function App() {
         <ScrollSection
           key={index}
           title={section.title}
+          showArrow={index === 0}
         />
       ))}
       <ScrollSection title="" className="gallery-section">
