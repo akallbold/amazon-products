@@ -47,7 +47,7 @@ html {
 
 .first-section {
   align-items: flex-start;
-  /* padding-top: 10vh; */
+
 }
 .scroll-arrow {
   position: fixed;
@@ -84,7 +84,7 @@ html {
 
 .image-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -129,6 +129,9 @@ html {
   transition: var(--transition);
   border-radius: 8px;
   overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -234,7 +237,6 @@ html {
   opacity: 1;
   transform: translateY(0);
   transition: var(--transition);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-section.active .section-title {

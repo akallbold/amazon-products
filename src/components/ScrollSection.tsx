@@ -6,20 +6,22 @@ interface ScrollSectionProps {
   isCorrect?: boolean;
   showArrow?: boolean;
   children?: React.ReactNode;
+  showArrow?: boolean;
 }
 
 const ScrollSection: React.FC<ScrollSectionProps> = ({
   title,
   className,
   children,
-  showArrow
+  showArrow = false,
 }) => {
   return (
     <div className={`scroll-section ${className || ''}`}>
-    <div className="section-content">
-      <h2 className="section-title">{title}</h2>
-      {children}
-    {showArrow && <div className={`scroll-arrow ${!showArrow ? 'hidden' : ''}`}>&#x2193;</div>}
+      <div className="section-content">
+        <h2 className="section-title">{title}</h2>
+        {children}
+      {showArrow && <div className="scroll-arrow">&#x2193;</div>}
+      </div>
     </div>
   </div>
   );

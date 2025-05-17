@@ -13,7 +13,6 @@ function App() {
     { title: "I kept clicking - just to find out what the heck everything was" },
     { title: "Here is a small collection of what I saw" }, 
     { title: "Can you guess what each thing is?" }, 
-
   ];
 
   useEffect(() => {
@@ -45,9 +44,11 @@ function App() {
         setIsAtTop(true);
       }
     };
+
   
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Run once on load
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -57,8 +58,10 @@ function App() {
         <ScrollSection
           key={index}
           title={section.title}
+
           showArrow={index === 0 && isAtTop}
           className={index === 0 ? 'first-section' : undefined}
+
         />
       ))}
       <ScrollSection title="" className="gallery-section">
