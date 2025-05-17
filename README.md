@@ -7,6 +7,34 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Local Development
+
+1. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+2. Create a `.env` file with your OpenAI key
+
+   ```bash
+   echo "VITE_OPENAI_API_KEY=<your key>" > .env
+   ```
+
+3. Start the frontend
+
+   ```bash
+   npm run dev
+   ```
+
+   This runs Vite at [http://localhost:5173](http://localhost:5173).
+
+4. In another terminal start the backend functions (requires the Netlify CLI)
+
+   ```bash
+   netlify dev
+   ```
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:

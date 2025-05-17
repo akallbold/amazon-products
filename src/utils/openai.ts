@@ -20,5 +20,5 @@ export async function checkGuess(prompt: string) {
   }
 
   const data = await res.json();
-  return { result: data.result, error: data.error, correct: data.correct };
+    return { result: data.result, error: data.error, correct: data.correct };
 }
