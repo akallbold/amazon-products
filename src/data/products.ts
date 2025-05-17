@@ -33,15 +33,6 @@ export const productsData: ProductData[] = [
   { name: 'reusable-glow-sticks', answer: 'These are reusable glow sticks.', attempted: false, warmth: 0, answered: false },
   { name: 'airpods-case', answer: 'This is a Geometric AirPods Pro Case', attempted: false, warmth: 0, answered: false },
   { name: 'rod-case', answer: 'This is a case for your fishing rods.', attempted: false, warmth: 0, answered: false },
-  { name: 'tooth-timer', answer: 'This is a simple two-minute timer for kids to ensure they brush their teeth for enough time.', attempted: false, warmth: 0, answered: false },
-  { name: 'rail-protector', answer: 'This is used to protect your hand rails when you put holiday garlands up for Christmas.', attempted: false, warmth: 0, answered: false },
-  { name: 'glass-stand', answer: 'This is used to shine a light through crystal or glass art displays. It helps you see the design in the glass or crystal more clearly.', attempted: false, warmth: 0, answered: false },
   { name: 'indian-clubs', answer: 'This is called an indian club. Its something you can use during your workouts to get stronger. Its similar to a medicine ball but its called an indian club.', attempted: false, warmth: 0, answered: false },
-  { name: 'electronic-whistle', answer: 'This is a referee or coach whistle that is electronic. It works the same way as an old-fashioined whistle but it is charged by usb', attempted: false, warmth: 0, answered: false },
-  { name: 'foot-undeez', answer: 'FootUndeez are minimalist dance shoes designed to give dancers the sensation of dancing barefoot while providing essential protection and support.', attempted: false, warmth: 0, answered: false },
-  { name: 'windlass', answer: 'This is a tool used to wind up a rope or cable to raise or lower a weight or load. Often used to raise and lower an anchor on a boat. It is called a windlass.', attempted: false, warmth: 0, answered: false },
-  { name: 'knitting-machine', answer: 'This is a knitting machine.', attempted: false, warmth: 0, answered: false },
+  { name: 'electronic-whistle', answer: 'This is a referee or coach whistle that is electronic. It works the same way as an old-fashioined whistle but it is charged by usb', attempted: false, warmth: 0, answered: false }]
 
-
-
-];
